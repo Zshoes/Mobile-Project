@@ -5754,6 +5754,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1007526651}
   - component: {fileID: 1007526652}
+  - component: {fileID: 1007526653}
   m_Layer: 0
   m_Name: LevelManager
   m_TagString: Untagged
@@ -5810,6 +5811,24 @@ MonoBehaviour:
   - {fileID: 653671722}
   - {fileID: 286857395}
   startPoint: {fileID: 581905988}
+--- !u!114 &1007526653
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1007526650}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a03b77594a500f6498e99218dfe68861, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyPrefabs:
+  - {fileID: 335124838668409621, guid: b18e5dc0f939a1942ad9076d7ee5577e, type: 3}
+  baseEmenies: 8
+  enemiesPerSecond: 0.5
+  timeBetweenWaves: 5
+  difficultyScalingFactor: 0.75
 --- !u!1001 &1008485106
 PrefabInstance:
   m_ObjectHideFlags: 0

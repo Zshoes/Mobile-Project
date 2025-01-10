@@ -15,14 +15,33 @@ public class EnemySpawner : MonoBehaviour
     private float timeSinceLastSpawn;
     private int enemiesAlive;
     private int enemiesLeftToSpawn;
+    private bool isSpawning = false;
 
     private void Start()
     {
-        enemiesLeftToSpawn = baseEmenies;
-
+        StartWave(); //Put into a play menu in the future
     }
 
-    private int enemiesPerWave()
+    private void Update()
+    {
+        if (!isSpawning) return;
+
+        timeSinceLastSpawn += Time.deltaTime;
+
+        if (timeSinceLastSpawn >= 1f / enemiesPerSecond)
+        {
+            Debug.Log("Spawning Enemy");
+            timeSinceLastSpawn = 0f;   
+        }
+    }
+    private void StartWave()
+    {
+        isSpawning = true;
+        enemiesLeftToSpawn = EnemiesPerWave();
+       
+    }
+
+    private int EnemiesPerWave()
     {
         return Mathf.RoundToInt(baseEmenies * Mathf.Pow(currentWave, difficultyScalingFactor));
     }
