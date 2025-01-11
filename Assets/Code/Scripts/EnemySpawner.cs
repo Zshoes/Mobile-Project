@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -33,7 +35,7 @@ public class EnemySpawner : MonoBehaviour
 
     private void Start()
     {
-        StartWave(); //Put into a play menu in the future
+        StartCoroutine(StartWave()); //Put into a play menu in the future
     }
 
     private void EnemyDestroyed()
@@ -54,16 +56,30 @@ public class EnemySpawner : MonoBehaviour
             enemiesAlive++;
             timeSinceLastSpawn = 0f;   
         }
+
+        if (enemiesAlive == 0 && enemiesLeftToSpawn == 0)
+        {
+            EndWave();
+        }
     }
 
+    private void EndWave()
+    {
+        isSpawning = false;
+        timeSinceLastSpawn = 0f;
+        currentWave++;
+        StartCoroutine(StartWave());
+    }
     private void SpawnEnemy()
     {
         GameObject prefabToSpawn = enemyPrefabs[0];
         Instantiate(prefabToSpawn, LevelManager.main.startPoint.position, Quaternion.identity); //Spawns the enemy at where the starting point in the level manager says
         Debug.Log("Spawning Enemy");
     }
-    private void StartWave()
+    private IEnumerator StartWave() //IENum lets us start inside of a curity
     {
+        yield return new WaitForSeconds(timeBetweenWaves);
+
         isSpawning = true;
         enemiesLeftToSpawn = EnemiesPerWave();
        
