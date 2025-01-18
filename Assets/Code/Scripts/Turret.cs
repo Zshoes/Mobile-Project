@@ -13,7 +13,7 @@ public class Turret : MonoBehaviour
     [Header("Attribute")]
     [SerializeField] private float targetingRange = 3f;
     [SerializeField] private float rotationSpeed = 200f;
-    [SerializeField] private float bps = 1; //Bullets Per Second
+    [SerializeField] private float bps = 1f; //Bullets Per Second
 
     private float timeUntilFire;
 
@@ -25,13 +25,6 @@ public class Turret : MonoBehaviour
         Handles.DrawWireDisc(transform.position, transform.forward, targetingRange);
     }
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        GameObject bulletObj = Instantiate(bulletPrefab, firingPoint.position, Quaternion.identity);
-        Bullet bulletScript = bulletObj.GetComponent<Bullet>();
-        bulletScript.SetTarget(target);
-    }
 
     // Update is called once per frame
     void Update()
@@ -64,6 +57,9 @@ public class Turret : MonoBehaviour
     {
 
         Debug.Log("Shoot");
+        GameObject bulletObj = Instantiate(bulletPrefab, firingPoint.position, Quaternion.identity);
+        Bullet bulletScript = bulletObj.GetComponent<Bullet>();
+        bulletScript.SetTarget(target);
     }
 
     private void FindTarget()

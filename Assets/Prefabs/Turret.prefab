@@ -138,9 +138,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   bulletPrefab: {fileID: 2325556252877907010, guid: 254ec6125ecee1a41a1a66e4956c32b7, type: 3}
-  firingPoint: {fileID: 0}
+  firingPoint: {fileID: 7925930514063670914}
   targetingRange: 3
-  rotationSpeed: 5
+  rotationSpeed: 200
   bps: 1
 --- !u!1 &3248981755501558853
 GameObject:
