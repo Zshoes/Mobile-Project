@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1694029877501217725}
   - component: {fileID: 4876572347356323872}
   - component: {fileID: 8148667934297999852}
+  - component: {fileID: 5007779268429183891}
   m_Layer: 0
   m_Name: Singular Plot
   m_TagString: Untagged
@@ -134,3 +135,15 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &5007779268429183891
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2574922258816096618}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e70c53445bc23140bb0b3b6128908bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
