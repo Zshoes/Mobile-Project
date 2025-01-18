@@ -24,6 +24,14 @@ public class Plot : MonoBehaviour
 
     private void OnMouseDown()
     {
+        if(tower != null) //remove for upgrade / sell functions later (this is if it empty then we do, if not empty we return)
+        {
+            return;
+        }
+
+        GameObject towerToBuild = BuildManager.main.GetSelectedTower();
+        Instantiate(towerToBuild, transform.position, Quaternion.identity);
+
         Debug.Log("build tower here " + name);
     }
 
