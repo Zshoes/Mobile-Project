@@ -29,8 +29,8 @@ public class Plot : MonoBehaviour
             return;
         }
 
-        GameObject towerToBuild = BuildManager.main.GetSelectedTower();
-        Instantiate(towerToBuild, transform.position, Quaternion.identity);
+        Tower towerToBuild = BuildManager.main.GetSelectedTower();
+        Instantiate(towerToBuild.prefab, transform.position, Quaternion.identity);
 
         Debug.Log("build tower here " + name);
     }
