@@ -9,7 +9,6 @@ public class Menu : MonoBehaviour
     [SerializeField] TextMeshProUGUI currencyUI;
     [SerializeField] Animator anim;
 
-
     private bool isMenuOpen = true;
 
     public void ToggleMenu()
@@ -23,9 +22,5 @@ public class Menu : MonoBehaviour
         currencyUI.text = LevelManager.main.currency.ToString();
     }
 
-   /** public void SetSelected()
-    { 
-
-    } was here then gone idk man**/ 
 
 }
