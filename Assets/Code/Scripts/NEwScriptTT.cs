@@ -9,6 +9,11 @@ public class NEwScriptTT : MonoBehaviour
     [SerializeField] public float attackDamage = 2f;
     [SerializeField] public float health = 50f;
 
+
+    [Header("Attributes")]
+    [SerializeField] private float speed = 5f;
+    [SerializeField] private int dmg = 1;
+
     private void TestTT()
     {
 
